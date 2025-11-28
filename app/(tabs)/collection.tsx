@@ -1,49 +1,64 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Screen } from 'components/Screen';
 
+// Importar las imágenes estáticamente
+const celebiImg = require('../../assets/celebi1.jpg');
+const pikachuImg = require('../../assets/pikachu.jpg');
+const snivyImg = require('../../assets/snivy.jpg');
 
 export default function FavoritesScreen() {
-  const favorites = [
-    { id: 1, title: 'Favorito 1', description: 'Este es tu primer favorito' },
-    { id: 2, title: 'Favorito 2', description: 'Un elemento guardado' },
-    { id: 3, title: 'Favorito 3', description: 'Otro item que te gusta' },
+  const pokemons = [
+    { id: 1, title: 'Celebi ex', collec: 'Sword and Shield', num: '001/135', img: celebiImg },
+    { id: 2, title: 'Pikachu ex', collec: 'Vivid voltage', num: '023/185', img: pikachuImg },
+    { id: 3, title: 'Snivy', collec: 'Black Bolt', num: '045/102', img: snivyImg },
   ];
 
   return (
-	<Screen>
-		<ScrollView className="flex-1">
-		<View className="flex-1 p-6">
-			<Text className="text-4xl font-bold text-red-500 mb-4 text-center">
-			Favoritos
-			</Text>
-			<Text className="text-lg text-gray-700 text-center mb-6">
-			Tus elementos guardados
-			</Text>
-			
-			<View className="space-y-4">
-			{favorites.map((item) => (
-				<View
-				key={item.id}
-				className="bg-red-50 p-4 rounded-lg border border-red-200"
-				>
-				<Text className="text-xl font-semibold text-red-800 mb-2">
-					❤️ {item.title}
-				</Text>
-				<Text className="text-gray-600">{item.description}</Text>
-				</View>
-			))}
-			</View>
+    <Screen>
+      <ScrollView className="flex-1">
+        <View className="flex-1 p-6">
+          <Text className="mb-4 text-center text-4xl font-bold text-white">Cartas</Text>
+          <Text className="mb-6 text-center text-lg text-gray-100">Tus cartas guardadas</Text>
 
-			{favorites.length === 0 && (
-			<View className="items-center justify-center py-12">
-				<Text className="text-gray-400 text-center text-lg">
-				No tienes favoritos todavía
-				</Text>
-			</View>
-			)}
-		</View>
-		</ScrollView>
-	</Screen>
+          <View className="space-y-4">
+            {pokemons.map((item) => (
+              <View
+                key={item.id}
+                className="mb-4 flex-row overflow-hidden rounded-xl border-2 bg-slate-700 shadow-lg">
+                {/* Imagen de la carta */}
+                <View className="flex-1">
+                  <Image source={item.img} className="h-64 w-full" resizeMode="contain" />
+                </View>
+
+                {/* Encabezado de la tarjeta */}
+                <View className="flex-1 p-3">
+                  <Text className="mb-1 text-2xl font-bold text-white">{item.title}</Text>
+                  <View className="flex-row items-center">
+                    <Text className="text-sm text-red-100">
+                      <Text>#{item.num}</Text>
+                    </Text>
+                  </View>
+                  {/* Colección */}
+                  <View className="mb-3 rounded-lg bg-gray-50 p-3">
+                    <Text className="mb-1 text-xs uppercase tracking-wide text-gray-500">
+                      <Text>Colección</Text>
+                    </Text>
+                    <Text className="text-base font-semibold text-gray-800">{item.collec}</Text>
+                  </View>
+                </View>
+              </View>
+            ))}
+          </View>
+          {pokemons.length === 0 && (
+            <View className="items-center justify-center py-12">
+              <Text className="text-center text-lg text-gray-400">
+                No tienes cartas todavía. ¡Agrega alguna a tu colección!
+              </Text>
+            </View>
+          )}
+        </View>
+      </ScrollView>
+    </Screen>
   );
 }
