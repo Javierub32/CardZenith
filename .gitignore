@@ -10,8 +10,11 @@ npm-debug.*
 *.orig.*
 web-build/
 
+# Environment variables
+.env
+.env.local
 
-
+build-apk.bat
 
 ios
 android

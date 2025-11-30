@@ -1,0 +1,71 @@
+
+					{/* Stats Grid */}
+					<View className="px-4 mb-6 gap-4">
+						<View className="flex-row gap-4">
+							{/* Card: Cartas Totales */}
+							<View className="flex-1 bg-[#2A223E] p-4 rounded-2xl">
+								<Text className="text-gray-300 text-xs mb-2">Cartas Totales</Text>
+								<Text className="text-white text-2xl font-bold">1,482</Text>
+							</View>
+							{/* Card: Cartas Únicas */}
+							<View className="flex-1 bg-[#2A223E] p-4 rounded-2xl">
+								<Text className="text-gray-300 text-xs mb-2">Cartas Únicas</Text>
+								<Text className="text-white text-2xl font-bold">730</Text>
+							</View>
+						</View>
+						{/* Card: Valor Mazo */}
+						<View className="bg-[#2A223E] p-4 rounded-2xl">
+							<Text className="text-gray-300 text-xs mb-2">Valor Mazo</Text>
+							<Text className="text-white text-2xl font-bold">$5,821</Text>
+						</View>
+					</View>
+
+					{/* Progress Bar */}
+					<View className="px-4 mb-8">
+						<View className="flex-row items-center justify-between mb-2">
+							<Text className="text-white text-sm font-semibold">Último Set Completado</Text>
+							<Text className="text-[#BC7AF9] text-sm font-bold">75%</Text>
+						</View>
+						{/* Barra de fondo */}
+						<View className="h-2 bg-[#2A223E] rounded-full overflow-hidden">
+							{/* Barra de progreso */}
+							<View className="h-full w-3/4 bg-[#8B2DF0] rounded-full" />
+						</View>
+					</View>
+
+					{/* Logros Recientes */}
+					<View className="px-4 mb-8">
+						<Text className="text-white text-lg font-bold mb-4">Logros Recientes</Text>
+						<View className="flex-row justify-between px-2">
+							{/* Logro 1 */}
+							<View className="items-center w-1/4">
+								<View className="w-14 h-14 bg-[#352b4d] rounded-full items-center justify-center mb-2">
+									<MaterialCommunityIcons name="trophy-variant" size={28} color="#FFD700" />
+								</View>
+								<Text className="text-gray-400 text-[10px] text-center">Primer{'\n'}Intercambio</Text>
+							</View>
+							{/* Logro 2 */}
+							<View className="items-center w-1/4">
+								<View className="w-14 h-14 bg-[#352b4d] rounded-full items-center justify-center mb-2">
+									<MaterialCommunityIcons name="seal" size={28} color="#FFD700" />
+								</View>
+								<Text className="text-gray-400 text-[10px] text-center">Maestro de{'\n'}Colección</Text>
+							</View>
+							{/* Logro 3 */}
+							<View className="items-center w-1/4">
+								<View className="w-14 h-14 bg-[#352b4d] rounded-full items-center justify-center mb-2">
+									<FontAwesome name="star" size={26} color="#FFD700" />
+								</View>
+								<Text className="text-gray-400 text-[10px] text-center">Especialista{'\n'}de Set</Text>
+							</View>
+							{/* Logro 4 (Bloqueado) */}
+							<View className="items-center w-1/4">
+								<View className="w-14 h-14 bg-[#252033] rounded-full items-center justify-center mb-2 border border-gray-700">
+									<FontAwesome name="lock" size={24} color="#666" />
+								</View>
+								<Text className="text-gray-600 text-[10px] text-center">Bloqueado</Text>
+							</View>
+						</View>
+					</View>
+
+

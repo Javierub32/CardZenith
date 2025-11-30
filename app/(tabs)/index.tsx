@@ -1,33 +1,33 @@
 import { View, Text, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Screen } from 'components/Screen';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 export default function HomeScreen() {
-  return (
-	<Screen>
-		<ScrollView className="flex-1 ">
-		<StatusBar style="light" />
-		<View className="flex-1 items-center justify-center p-6">
-			<Text className="text-4xl font-bold text-blue-500 mb-4">
-			Bienvenido
-			</Text>
-			<Text className="text-lg text-gray-700 text-center mb-6">
-			Esta es la pantalla de inicio de tu aplicación con Expo Router
-			</Text>
-			<View className="bg-blue-50 p-6 rounded-lg w-full">
-			<Text className="text-base text-gray-800 mb-2">
-				✨ Navegación configurada con tabs
-			</Text>
-			<Text className="text-base text-gray-800 mb-2">
-				🎨 Estilizado con NativeWind (Tailwind CSS)
-			</Text>
-			<Text className="text-base text-gray-800">
-				📱 5 pantallas listas para usar
-			</Text>
-			</View>
-		</View>
-		</ScrollView>
-	</Screen>
-  );
+	return (
+		<Screen>
+			<StatusBar style="light" />
+			<ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
+				<View className="flex-1 items-center justify-center p-6" style={{ minHeight: 600 }}>
+					{/* Icono principal */}
+					<View className="mb-8 items-center">
+						<View className="mb-6 h-32 w-32 items-center justify-center rounded-full bg-white/5">
+							<View className="h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-purple-800">
+								<MaterialCommunityIcons name="hammer-wrench" size={64} color="#fff" />
+							</View>
+						</View>
+
+						{/* Título */}
+						<Text className="mb-3 text-center text-4xl font-bold text-white">
+							En Construcción
+						</Text>
+					</View>
+
+
+				</View>
+			</ScrollView>
+		</Screen>
+	);
 }
