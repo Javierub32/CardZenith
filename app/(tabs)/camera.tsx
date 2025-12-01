@@ -132,6 +132,7 @@ export default function CameraScannerScreen() {
 			autor: cardData.illustrator,
 			setLogo: cardData.set_logo,
 			rarity: cardData.rarity,
+			price: parseFloat(cardData.price) || 0
           })
           .select()
           .single();

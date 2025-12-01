@@ -5,11 +5,13 @@ import { supabase } from '../../lib/supabase';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const { width } = Dimensions.get('window');
 
 export default function CardDetail() {
 	const { id, cardData } = useLocalSearchParams();
+	const insets = useSafeAreaInsets();
 
 	const [card, setCard] = useState<any>(null);
 	const [loading, setLoading] = useState(true);
@@ -73,7 +75,7 @@ export default function CardDetail() {
 			'Fire': '#F08030',
 			'Water': '#6890F0',
 			'Grass': '#78C850',
-			'Electric': '#F8D030',
+			'Lightning': '#E8C020',
 			'Psychic': '#F85888',
 			'Fighting': '#C03028',
 			'Darkness': '#705848',
@@ -212,6 +214,9 @@ export default function CardDetail() {
 					)}
 				</View>
 			</ScrollView>
+
+			{/* Espaciado para botones inferiores */}
+			<View style={{ height: insets.bottom }} />
 		</View>
 	);
 }
